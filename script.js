@@ -177,7 +177,7 @@ for (let i = 0; i < dropList.length; i++) {
         : currency_code == "INR"
         ? "selected"
         : "";
-    let optionTag = <option value="${currency_code}" ${selected}>${currency_code}</option>;
+    let optionTag = `<option value="${currency_code}" ${selected}>${currency_code}</option>`;
     dropList[i].insertAdjacentHTML("beforeend", optionTag);
   }
   dropList[i].addEventListener("change", (e) => {
@@ -189,9 +189,9 @@ function loadFlag(element) {
   for (let code in country_list) {
     if (code == element.value) {
       let imgTag = element.parentElement.querySelector("img");
-      imgTag.src = https://flagcdn.com/48x36/${country_list[
+      imgTag.src = `https://flagcdn.com/48x36/${country_list[
         code
-      ].toLowerCase()}.png;
+      ].toLowerCase()}.png`;
     }
   }
 }
@@ -224,13 +224,13 @@ function getExchangeRate() {
     amountVal = 1;
   }
   exchangeRateTxt.innerText = "Getting exchange rate...";
-  let url = https://v6.exchangerate-api.com/v6/${apiKey}/latest/${fromCurrency.value};
+  let url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${fromCurrency.value}`;
   fetch(url)
     .then((response) => response.json())
     .then((result) => {
       let exchangeRate = result.conversion_rates[toCurrency.value];
       let totalExRate = (amountVal * exchangeRate).toFixed(2);
-      exchangeRateTxt.innerText = ${amountVal} ${fromCurrency.value} = ${totalExRate} ${toCurrency.value};
+      exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExRate} ${toCurrency.value}`;
     })
     .catch(() => {
       exchangeRateTxt.innerText = "Something went wrong";
