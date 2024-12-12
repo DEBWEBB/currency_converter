@@ -11,12 +11,12 @@ body {
   justify-content: center;
   min-height: 100vh;
   padding: 0 10px;
-  background: linear-gradient(180deg, #a5cdfa 50%, #6cb1ff 50%);
+  background: linear-gradient(180deg, #fff 50%, #a16574 50%);
 }
 
 ::selection {
   color: #000;
-  background: #85fff9;
+  background: #fff;
 }
 
 .wrapper {
@@ -43,7 +43,7 @@ form :where(input, select, button) {
   outline: none;
   border-radius: 5px;
   border: none;
-  background: #00ffea41;
+  background: #444;
   color: #fff;
 }
 
